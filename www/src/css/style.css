@@ -28,3 +28,7 @@ aside {
 .profiles {
     margin-top: 20px;
 }
+.title {
+    font-size: 28px;
+    font-weight: bold;
+}
