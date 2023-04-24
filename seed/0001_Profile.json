@@ -1,0 +1,42 @@
+[
+  {
+    "model": "view_profile.Profile",
+    "pk": 1,
+    "fields": {
+      "column_name": "name",
+      "is_visible": true
+    }
+  },
+  {
+    "model": "view_profile.Profile",
+    "pk": 2,
+    "fields": {
+      "column_name": "title",
+      "is_visible": true
+    }
+  },
+  {
+    "model": "view_profile.Profile",
+    "pk": 3,
+    "fields": {
+      "column_name": "author",
+      "is_visible": true
+    }
+  },
+  {
+    "model": "view_profile.Profile",
+    "pk": 4,
+    "fields": {
+      "column_name": "description",
+      "is_visible": true
+    }
+  },
+  {
+    "model": "view_profile.Profile",
+    "pk": 5,
+    "fields": {
+      "column_name": "price",
+      "is_visible": true
+    }
+  }
+]
