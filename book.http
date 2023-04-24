@@ -1,0 +1,38 @@
+POST http://127.0.0.1:10000/books
+Content-Type: application/json
+
+{
+  "name": "Королевская кровь",
+  "title": "Сорваный венец",
+  "author": "Ирина Котова",
+  "description": "Королевская семья проходит через испытание лишения власти",
+  "price": 254
+}
+
+###
+PUT http://127.0.0.1:10000/books/1
+Content-Type: application/json
+
+{
+  "name": "Королевская кровь",
+  "title": "Сорванный венец",
+  "author": "Ирина Котова",
+  "description": "Королевская семья проходит через испытание лишения власти",
+  "price": 254
+}
+
+
+###
+GET http://127.0.0.1:10000/books
+Accept: application/json
+
+
+###
+GET http://127.0.0.1:10000/books/1
+Accept: application/json
+###
+DELETE http://127.0.0.1:10000/books/3
+
+
+
+
