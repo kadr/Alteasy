@@ -23,6 +23,7 @@ class App extends React.Component {
     componentDidMount() {
         axios.get(`${baseUrl}/books`).then((resp) => {
             this.setState({books: resp.data})
+            this.setState({errors: {}})
         })
         axios.get(`${baseUrl}/profiles`).then((profiles) => {
             let newProfiles = []
@@ -51,7 +52,7 @@ class App extends React.Component {
     addBook(book) {
         axios.post(`${baseUrl}/books`, book)
             .then((resp) => {
-                this.setState({books: [...this.state.books, {...resp.data}]})
+                this.setState({books: [...this.state.books, {...resp.data}], errors: {}})
             })
             .catch(err => {
                 if (err.response.status >= 400) {
@@ -89,7 +90,7 @@ class App extends React.Component {
                 })
                 allBooks[index] = book
                 this.setState({books: []}, () => {
-                    this.setState({books: [...allBooks]})
+                    this.setState({books: [...allBooks], errors: {}})
                 })
             })
             .catch(err => {

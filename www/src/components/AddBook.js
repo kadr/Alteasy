@@ -7,11 +7,11 @@ class AddBook extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
-            title: '',
-            author: '',
-            description: '',
-            price: 0,
+            name: this.props.book && this.props.book.name,
+            title: this.props.book && this.props.book.title,
+            author: this.props.book && this.props.book.author,
+            description: this.props.book && this.props.book.description,
+            price: this.props.book && this.props.book.price,
         }
     }
 
@@ -81,20 +81,19 @@ class AddBook extends React.Component {
                     <Button variant="primary" type="button" onClick={() => {
                         if (!this.props.errors)
                             this.myForm.reset()
-                        else
-                            this.myForm.reset()
-                        this.book = {
+                        let book = {
                             name: this.state.name,
                             title: this.state.title,
                             author: this.state.author,
                             description: this.state.description,
-                            price: this.state.price,
+                            price: this.state.price
                         }
                         if (this.props.book) {
-                            this.book.id = this.props.book.id
-                            this.props.onEdit(this.book)
-                        } else
-                            this.props.onAdd(this.book)
+                            book.id = this.props.book.id
+                            this.props.onEdit(book)
+                        } else {
+                            this.props.onAdd(book)
+                        }
                     }
                     }>{this.props.book ? 'Сохранить' : 'Добавить'}</Button>
                 </Form>
