@@ -4,8 +4,7 @@ import Books from "./components/Books";
 import AddBook from "./components/AddBook";
 import Profile from "./components/Profiles";
 
-// const baseUrl = 'http://library:10000'
-const baseUrl = 'http://127.0.0.1:10000'
+const baseUrl = 'http://backend:10000'
 
 class App extends React.Component {
 
