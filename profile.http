@@ -1,0 +1,21 @@
+###
+PATCH http://localhost:10000/profiles/4
+Content-Type: application/json
+
+{
+  "is_visible": false
+}
+
+
+###
+GET http://localhost:10000/profiles
+Accept: application/json
+
+
+###
+GET http://localhost:10000/profile/4
+Accept: application/json
+
+
+
+

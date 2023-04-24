@@ -1,0 +1,27 @@
+version: '3.1'
+services:
+  backend:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python manage.py runserver ${HOST}:${PORT}
+    volumes:
+      - .:/app:cached
+    env_file:
+      - .env
+    ports:
+      - "${PORT}:${PORT}"
+  react:
+    restart: always
+    build:
+      context: ./www/
+      dockerfile: Dockerfile
+    command: npm run start
+#    volumes:
+#      - .:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
